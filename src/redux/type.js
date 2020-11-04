@@ -1,0 +1,2 @@
+export const FETCHUSERS = 'FETCHUSERS';
+export const USERDETAILS = 'USERDETAILS';

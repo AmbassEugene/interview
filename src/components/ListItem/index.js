@@ -3,26 +3,28 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {randomColors} from '../../utils/colors';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import {connect} from 'react-redux';
+import {getUserDetails} from '../../redux/actions/details';
 
-export const ListItem = (props) => {
-  const {data} = props;
+const Items = (props) => {
+  const {data, getUserDetails} = props;
   const navigation = useNavigation();
   const backgroundColor = randomColors();
 
-  console.log(navigation);
+  const handlePress = () => {
+    getUserDetails(data), navigation.navigate('Details');
+  };
 
   return (
-    <TouchableOpacity
-      style={styles.wrap}
-      onPress={() => navigation.navigate('Details')}>
+    <TouchableOpacity style={styles.wrap} onPress={handlePress}>
       <View style={{backgroundColor, ...styles.logo}}>
-        <Text style={styles.logoText}>N</Text>
+        <Text style={styles.logoText}>{data.name.charAt(0)}</Text>
       </View>
       <View style={styles.detailsWrap}>
-        <Text>{data.name || 'Ambass Eugene'}</Text>
-        <Text>{data.categoryName || 'BTM Layout 2nd Stage'}</Text>
-        <Text>{data.location || 'Marathalli'}</Text>
-        <Text>{data.classLocPref || 'Online'}</Text>
+        <Text>{data.name}</Text>
+        <Text>{data.categoryName}</Text>
+        <Text>{data.location}</Text>
+        <Text>{data.classLocPref}</Text>
       </View>
       <View style={styles.actions}>
         <Text style={styles.actionText}>10 hours ago</Text>
@@ -38,6 +40,21 @@ export const ListItem = (props) => {
     </TouchableOpacity>
   );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUserDetails: (data) => dispatch(getUserDetails(data)),
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    // loginData: state.auth.loginData,
+    // loginError: state.auth.loginError,
+  };
+};
+
+export const ListItem = connect(mapStateToProps, mapDispatchToProps)(Items);
 
 const styles = StyleSheet.create({
   wrap: {

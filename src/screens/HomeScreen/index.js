@@ -1,27 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native';
 import {ListItem} from '../../components/ListItem';
+import {connect} from 'react-redux';
+import {fetchUsers} from '../../redux/actions/home';
 
-export const HomeScreen = ({navigation}) => {
-  const [data, setData] = useState(null);
-  const fetchUsers = async () => {
-    try {
-      const result = await fetch(
-        'http://www.mocky.io/v2/5c41920e0f0000543fe7b889',
-      );
-      const users = await result.json();
-      setData(users.dataList);
-    } catch (error) {}
-  };
+export const Home = ({navigation, ...props}) => {
+  const {fetchUsers, users} = props;
+
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
-    <View style={styles.wrap}>
-      {!!data ? (
+    <View>
+      {!!users ? (
         <FlatList
-          data={data}
+          keyExtractor={(item, index) => index.toString()}
+          data={users.dataList}
           renderItem={(item) => <ListItem data={item.item} />}
         />
       ) : (
@@ -31,6 +26,16 @@ export const HomeScreen = ({navigation}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  wrap: {},
-});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers()),
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    users: state.home.allUsers,
+  };
+};
+
+export const HomeScreen = connect(mapStateToProps, mapDispatchToProps)(Home);
