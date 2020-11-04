@@ -29,6 +29,9 @@ export const styles = StyleSheet.create({
     textTransform: 'capitalize',
     opacity: 0.8,
   },
+  name: {
+    fontSize: 17,
+  },
   actions: {
     alignItems: 'center',
   },

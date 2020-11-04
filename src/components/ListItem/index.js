@@ -22,9 +22,9 @@ const Items = (props) => {
         <Text style={styles.logoText}>{data.name.charAt(0)}</Text>
       </View>
       <View style={styles.detailsWrap}>
-        <Text>{data.name}</Text>
-        <Text>{data.categoryName}</Text>
-        <Text>{data.location}</Text>
+        <Text style={styles.name}>{data.name}</Text>
+        <Text style={styles.preference}>{data.categoryName}</Text>
+        <Text style={styles.preference}>{data.location}</Text>
         <Text style={styles.preference}>{data.classLocPref}</Text>
       </View>
       <View style={styles.actions}>
