@@ -2,28 +2,34 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {randomColors} from '../../utils/colors';
 import Icon from 'react-native-vector-icons/AntDesign';
+import {useNavigation} from '@react-navigation/native';
 
 export const ListItem = (props) => {
-  const {data, navigation} = props;
+  const {data} = props;
+  const navigation = useNavigation();
   const backgroundColor = randomColors();
 
+  console.log(navigation);
+
   return (
-    <TouchableOpacity style={styles.wrap}>
+    <TouchableOpacity
+      style={styles.wrap}
+      onPress={() => navigation.navigate('Details')}>
       <View style={{backgroundColor, ...styles.logo}}>
         <Text style={styles.logoText}>N</Text>
       </View>
       <View style={styles.detailsWrap}>
-        <Text>{data.item.name}</Text>
-        <Text>{data.item.categoryName}</Text>
-        <Text>{data.item.location}</Text>
-        <Text>{data.item.classLocPref}</Text>
+        <Text>{data.name || 'Ambass Eugene'}</Text>
+        <Text>{data.categoryName || 'BTM Layout 2nd Stage'}</Text>
+        <Text>{data.location || 'Marathalli'}</Text>
+        <Text>{data.classLocPref || 'Online'}</Text>
       </View>
       <View style={styles.actions}>
         <Text style={styles.actionText}>10 hours ago</Text>
         <View>
           <Icon
             name="mobile1"
-            size={30}
+            size={25}
             color={backgroundColor}
             style={styles.icon}
           />
@@ -42,30 +48,23 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logo: {
-    // justifyContent: 'center',
     marginRight: 10,
     marginTop: 5,
-    // padding: 10,
-    // backgroundColor: randomColors(),
     height: 35,
     width: 35,
     borderRadius: 35,
     alignItems: 'center',
   },
   logoText: {
-    // fontWeight: 'bold',
     fontSize: 18,
     marginTop: 4,
     color: '#fff',
-    // height: 'auto',
   },
   detailsWrap: {
     marginRight: 10,
     flex: 2,
-    // backgroundColor: randomColors(),
   },
   actions: {
-    // justifyContent: "center"
     alignItems: 'center',
   },
   actionText: {

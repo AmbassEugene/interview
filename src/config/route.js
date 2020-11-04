@@ -22,7 +22,7 @@ export const Route = () => {
         />
         <Stack.Screen
           headerShown={false}
-          name="DetailScreen"
+          name="Details"
           component={DetailScreen}
         />
       </Stack.Navigator>

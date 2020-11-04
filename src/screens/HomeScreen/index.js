@@ -20,7 +20,10 @@ export const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.wrap}>
       {!!data ? (
-        <FlatList data={data} renderItem={(item) => <ListItem data={item} />} />
+        <FlatList
+          data={data}
+          renderItem={(item) => <ListItem data={item.item} />}
+        />
       ) : (
         <Text>Loading ...</Text>
       )}
