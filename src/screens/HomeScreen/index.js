@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import {ListItem} from '../../components/ListItem';
 import {connect} from 'react-redux';
 import {fetchUsers} from '../../redux/actions/home';
