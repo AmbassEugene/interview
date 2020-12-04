@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "847987202198",
+    "project_id": "regalix-interview",
+    "storage_bucket": "regalix-interview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847987202198:android:05ee97398e1a24c3af0ab7",
+        "android_client_info": {
+          "package_name": "com.interview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847987202198-hk8n7namdu6fpi84rqn6cfvs0068ob7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.interview",
+            "certificate_hash": "e5f9de0ef07003465468c11de188c8965d06fdb9"
+          }
+        },
+        {
+          "client_id": "847987202198-lnrehfcrm737knq3b183e9jnttlt2puk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.interview",
+            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        },
+        {
+          "client_id": "847987202198-kuerv2g4s04i8m6ofbp15nk0i7pljnal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCccW1xkvKy155zQe5YwRi3hT_TEfmhPIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847987202198-kuerv2g4s04i8m6ofbp15nk0i7pljnal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
