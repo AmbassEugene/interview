@@ -22,6 +22,8 @@ export const Home = ({navigation, ...props}) => {
       ) : (
         <Text>Loading ...</Text>
       )}
+
+      <Text>HomeScreen</Text>
     </View>
   );
 };

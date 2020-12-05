@@ -14,19 +14,19 @@
       },
       "oauth_client": [
         {
+          "client_id": "847987202198-1gvnt3cdj8g77st93675e16m816f4ua7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.interview",
+            "certificate_hash": "48bb505f05fd5ebdfa2d57e4bbbefa44bb3977f8"
+          }
+        },
+        {
           "client_id": "847987202198-hk8n7namdu6fpi84rqn6cfvs0068ob7d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.interview",
             "certificate_hash": "e5f9de0ef07003465468c11de188c8965d06fdb9"
-          }
-        },
-        {
-          "client_id": "847987202198-lnrehfcrm737knq3b183e9jnttlt2puk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.interview",
-            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
           }
         },
         {
